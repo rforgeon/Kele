@@ -1,1 +1,1 @@
-This is a Ruby Gem API.
+This is a client for the Bloc API. 🔨🔧✨
