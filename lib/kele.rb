@@ -10,7 +10,7 @@ class Kele
     raise StandardError.new('Invalid credentials') unless @auth_token
   end
 
-  def get_me
+  def get_me #added
     response = self.class.get(@api_url + '/users/me', headers: { "authorization" => @auth_token })
     JSON.parse(response.body)
   end
