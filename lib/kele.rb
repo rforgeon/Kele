@@ -16,7 +16,12 @@ class Kele
   end
 
   def get_mentor_availability(mentor_id)
-    response = self.class.get(@api_url + 'mentors/'+mentor_id.to_s+'/student_availability', headers: { "authorization" => @auth_token })
+    response = self.class.get(@api_url + '/mentors/'+mentor_id.to_s+'/student_availability', headers: { "authorization" => @auth_token })
+    JSON.parse(response.body)
+  end
+
+  def get_checkpoint(checkpoint_id)
+    response = self.class.get(@api_url + '/roadmaps/'+checkpoint_id, headers: { "authorization" => @auth_token })
     JSON.parse(response.body)
   end
 
